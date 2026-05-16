@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessories By Melek</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #121212; /* Premium Dark Background */
+            color: #e0e0e0;
+        }
+
+        /* Navigation Bar */
+        header {
+            background-color: #1a1a1a;
+            padding: 20px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #d4af37; /* Gold Border */
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #d4af37; /* Metallic Gold */
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #cccccc;
+            margin-left: 20px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #d4af37; /* Gold Hover */
+        }
+
+        .insta-nav {
+            color: #e1306c;
+            font-size: 20px;
+            margin-left: 25px;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        .insta-nav:hover {
+            transform: scale(1.2);
+            color: #d4af37;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=1200&h=1200&fit=crop') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            margin-top: 60px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            color: #d4af37; /* Gold Heading */
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #b3b3b3;
+            max-width: 600px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #d4af37, #aa7c11); /* Gold Gradient Button */
+            color: #121212;
+            padding: 12px 35px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(212,175,55,0.2);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212,175,55,0.4);
+        }
+
+        /* Sections General */
+        section {
+            padding: 90px 10%;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 32px;
+            color: #d4af37;
+            margin-bottom: 40px;
+            position: relative;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        section h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 2px;
+            background-color: #d4af37;
+            margin: 15px auto 0;
+        }
+
+        /* Products Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #2a2a2a;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: #d4af37;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 8px;
+            background-color: #222;
+        }
+
+        .product-card h3 {
+            margin: 15px 0 10px;
+            color: #ffffff;
+            font-size: 18px;
+        }
+
+        .product-card p {
+            color: #d4af37;
+            font-weight: bold;
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+
+        /* WhatsApp Group CTA Section */
+        .wp-group-section {
+            background: linear-gradient(135deg, #142516, #0b140c); /* Dark Luxury Green */
+            padding: 50px 10%;
+            border-radius: 15px;
+            margin: 40px 10%;
+            border: 1px solid #25d366;
+            box-shadow: 0 4px 20px rgba(37,211,102,0.1);
+        }
+
+        .wp-group-section h3 {
+            color: #25d366;
+            font-size: 24px;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .wp-group-section p {
+            color: #b3c6b5;
+            margin-bottom: 25px;
+            font-size: 16px;
+        }
+
+        .btn-wp {
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            color: white;
+            box-shadow: 0 4px 15px rgba(37,211,102,0.2);
+        }
+
+        .btn-wp:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37,211,102,0.4);
+        }
+
+        .btn-wp i {
+            margin-right: 8px;
+        }
+
+        /* About Section */
+        .about {
+            background-color: #161616;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+        }
+
+        .about p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 16px;
+            line-height: 1.8;
+            color: #cccccc;
+        }
+
+        /* Contact Form */
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #1a1a1a;
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid #2a2a2a;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #d4af37;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            background-color: #121212;
+            border: 1px solid #333;
+            color: #ffffff;
+            border-radius: 5px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: #d4af37;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0d0d0d;
+            color: #777777;
+            text-align: center;
+            padding: 25px;
+            font-size: 14px;
+            border-top: 1px solid #1a1a1a;
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* Responsive Settings */
+        @media (max-width: 768px) {
+            header { 
+                padding: 20px 5%; 
+                flex-wrap: wrap;
+            }
+            
+            nav { 
+                width: 100%;
+                justify-content: flex-start;
+                margin-top: 10px;
+            }
+            
+            nav a { 
+                margin-left: 10px; 
+                font-size: 14px; 
+            }
+            
+            .insta-nav { 
+                margin-left: 12px; 
+                font-size: 18px; 
+            }
+            
+            .hero h1 { 
+                font-size: 32px; 
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            section { 
+                padding: 60px 5%; 
+            }
+            
+            .wp-group-section { 
+                margin: 30px 5%; 
+                padding: 40px 20px; 
+            }
+            
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-container {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Nav -->
+    <header>
+        <div class="logo">Accessories By Melek</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <!-- Instagram Link -->
+            <a href="https://instagram.com/accessoriesbymelek" target="_blank" class="insta-nav" title="Follow us on Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <h1>Accessories By Melek</h1>
+        <p>Elevate your elegance with our premium, curated luxury accessories designed to make you shine every single day.</p>
+        <a href="#products" class="btn">Explore Collection</a>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products">
+        <h2>Our Premium Collection</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400&h=400&fit=crop" alt="Elegant Necklace">
+                <h3>Elegant Necklace</h3>
+                <p>Rs. 1,500</p>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1515562141207-5dca89f118d5?w=400&h=400&fit=crop" alt="Classic Rings">
+                <h3>Classic Rings Set</h3>
+                <p>Rs. 1,200</p>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=400&h=400&fit=crop" alt="Stylish Bracelet">
+                <h3>Stylish Bracelet</h3>
+                <p>Rs. 950</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Group Invite Section -->
+    <div class="wp-group-section">
+        <h3>Join Our VIP WhatsApp Group!</h3>
+        <p>Get exclusive early access to new drops, luxury updates, and members-only secret discount offers.</p>
+        <a href="https://chat.whatsapp.com/your-group-link" target="_blank" class="btn btn-wp">
+            <i class="fab fa-whatsapp"></i> Join WhatsApp Group
+        </a>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>At Accessories By Melek, we believe that luxury lies in the details. We curate premium, high-quality jewellery and statement accessories that reflect sophistication and modern charm. Each piece is handpicked to provide you with an unmatchable aesthetic and premium experience.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Custom Inquiries</h2>
+        <div class="contact-container">
+            <form id="contactForm">
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input type="text" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label>Your Email</label>
+                    <input type="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea rows="5" placeholder="How can we assist you today?..." required></textarea>
+                </div>
+                <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Accessories By Melek. All Rights Reserved.</p>
+    </footer>
+
+    <!-- WhatsApp Floating Button (Direct Chat) -->
+    <a href="https://wa.me/your-phone-number" class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Form Submission Alert
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for contacting Accessories By Melek! We will get back to you soon.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
